@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script>
+      var ua = window.navigator.userAgent.toLowerCase(), is_ie = (/trident/gi).test(ua) || (/msie/gi).test(ua);
+      if (is_ie) {
+      		document.documentElement.className += 'ie';
+      }
+      console.log(!is_ie);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__row">
+          <div class="logo-block">
+            <div class="logo">
+              <svg class="logo-gp">
+                <use href="img/sprites/sprite.svg#logo-gp"></use>
+              </svg>
+              <svg class="logo-card">
+                <use href="img/sprites/sprite.svg#logo-card"></use>
+              </svg>
+            </div>
+          </div><span>Официальный дилер <br>«Газпромнефть-Корпоративные продажи»</span><a href="mailto:info@gp-card.ru">info@gp-card.ru</a><a href="tel:+79266977249">+7 926 697-72-49</a>
+        </div>
+        <nav class="nav">
+          <ul class="nav__list">
+                <li class="nav__item"><a href="#">Главная</a></li>
+                <li class="nav__item"><a href="#">Сеть АЗС</a></li>
+                <li class="nav__item"><a href="#">Информация</a></li>
+                <li class="nav__item"><a href="#">Новости</a></li>
+                <li class="nav__item"><a href="#">Заключить договор</a></li>
+                <li class="nav__item"><a href="#">Контакты</a></li>
+                <li class="nav__item"><a href="#">Личный кабинет</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="modal-overlay"></div>
+    <div class="heading heading-main">
+      <div class="heading-main-canvas-wrapper">
+        <div class="heading-main-canvas"></div>
+      </div>
+      <div class="container">
+        <h1 class="title-h1">Топливные карты <br>от «Газпром нефти»</h1><img class="heading-main-card" src="img/heading/card.png" alt="Пластиковая карточка Газпром" title="Карточка Газпром">
+        <ul class="heading-list">
+              <li class="heading-item">
+                <svg>
+                  <use href="img/sprites/sprite.svg#check"></use>
+                </svg><span>более 2600 АЗС по России и странам СНГ</span>
+              </li>
+              <li class="heading-item">
+                <svg>
+                  <use href="img/sprites/sprite.svg#check"></use>
+                </svg><span>автомойки и шиномонтажи в 6 регионах</span>
+              </li>
+        </ul>
+      </div>
+    </div>
+    <div class="form form__call">
+      <div class="container"><span class="form__title">Начните сотрудничество <span>прямо сейчас</span></span>
+        <div class="form__row">
+          <label class="form__input">
+            <input type="text" id="YourName" required placeholder=""><span>Представьтесь</span>
+          </label>
+          <label class="form__input">
+            <input type="text" id="YourPhone" required placeholder=""><span>Телефон</span>
+          </label>
+          <button class="button button--blue">Оставить заявку</button>
+        </div>
+        <div class="form__checkbox">
+          <input class="visually-hidden" type="checkbox" id="personalCheck">
+          <label for="personalCheck"><span class="form__checkbox-icon">
+              <svg>
+                <use href="img/sprites/sprite.svg#check"></use>
+              </svg></span><span class="form__checkbox-text">Я согласен(а) на обработку <a href="#">персональных данных</a></span></label>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
