@@ -27,6 +27,7 @@
               <svg class="logo-card">
                 <use href="img/sprites/sprite.svg#logo-card"></use>
               </svg></a></div><span>Официальный дилер <br>«Газпромнефть-Корпоративные продажи»</span><a href="mailto:info@gp-card.ru">info@gp-card.ru</a><a href="tel:+79266977249">+7 926 697-72-49</a>
+          <button class="button-burger"><span class="top"></span><span class="mid"></span><span class="bot"></span></button>
         </div>
         <nav class="nav">
           <ul class="nav__list">
@@ -102,6 +103,29 @@
                   <li class="control__col-item">Нефтебаза</li>
                   <li class="control__col-item">Бензовоз</li>
                   <li class="control__col-item">АЗС</li>
+          </ul>
+          <ul class="control__markers">
+            <li class="control__marker" id="marker1"><span></span>
+              <div class="control__marker-popup"><span>Каждая партия топлива на нефтебазе проходит лабораторные исследования <b>и получает паспорт качества</b></span></div>
+            </li>
+            <li class="control__marker" id="marker2"><span></span>
+              <div class="control__marker-popup"><span>Каждый бензовоз <br><b>Оборудован системой позиционирования GPS/ГЛОНАС,</b> <br> контролирующей маршрут и остановки в режме онлайн</span></div>
+            </li>
+            <li class="control__marker" id="marker3"><span></span>
+              <div class="control__marker-popup"><span>Происходит переход от <br><b>одноразовых пломб к электронным</b></span></div>
+            </li>
+            <li class="control__marker" id="marker4"><span></span>
+              <div class="control__marker-popup"><span>Процесс слива автоцестерны происходит при <br><b>двойном контроле</b> «Водитель - сотрудник АЗС»</span></div>
+            </li>
+            <li class="control__marker" id="marker5"><span></span>
+              <div class="control__marker-popup"><span>Каждый вид топлива сливается по отдельному <br><b>маркированному трубопроводу</b>      </span></div>
+            </li>
+            <li class="control__marker" id="marker6"><span></span>
+              <div class="control__marker-popup"><span>на каждой АЗС сети ежемесячно происходит не менее <b>одной внезапной проверки</b></span></div>
+            </li>
+            <li class="control__marker" id="marker7"><span></span>
+              <div class="control__marker-popup"><span><b>проверяет топливо в автоцистернах,</b> <br> выезжающих с нефтебаз, а также <b>топливо на АЗС</b></span></div>
+            </li>
           </ul>
         </div>
       </section>
@@ -182,16 +206,16 @@
         <div class="container"><span class="form__title">Начните сотрудничество <span>прямо сейчас</span></span>
           <div class="form__row">
             <label class="form__input">
-              <input type="text" id="YourName" required placeholder=""><span>Представьтесь</span>
+              <input type="text" id="YourNameSection" required placeholder=""><span>Представьтесь</span>
             </label>
             <label class="form__input">
-              <input type="text" id="YourPhone" required placeholder=""><span>Телефон</span>
+              <input type="text" id="YourPhoneSection" required placeholder=""><span>Телефон</span>
             </label>
             <button class="button button--blue">Оставить заявку</button>
           </div>
           <div class="form__checkbox">
-            <input class="visually-hidden" type="checkbox" id="personalCheck">
-            <label for="personalCheck"><span class="form__checkbox-icon">
+            <input class="visually-hidden" type="checkbox" id="personalCheckSection">
+            <label for="personalCheckSection"><span class="form__checkbox-icon">
                 <svg>
                   <use href="img/sprites/sprite.svg#check"></use>
                 </svg></span><span class="form__checkbox-text">Я согласен(а) на обработку <a href="#">персональных данных</a></span></label>
@@ -199,32 +223,6 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__row"><a class="logo" href="#">
-            <svg class="logo-gp">
-              <use href="img/sprites/sprite.svg#logo-gp"></use>
-            </svg>
-            <svg class="logo-card">
-              <use href="img/sprites/sprite.svg#logo-card"></use>
-            </svg></a>
-          <nav class="footer__nav">
-            <ul>
-              <li><a href="#">Сеть АЗС</a></li>
-              <li><a href="#">Информация</a></li>
-              <li><a href="#">Новости</a></li>
-              <li><a href="#">Заключить договор</a></li>
-              <li><a href="#">Контакты</a></li>
-              <li><a href="#">Личный кабинет</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="footer__bottom"><span>© 2018 - 2020 GP-CARD </span><a class="footer__bottom-web2" href="https://web2.ru" target="_blank" title="Переход на сайт web2.ru"> 
-            <svg width="24" height="24">
-              <use href="./img/sprites/sprite.svg#web2ru"></use>
-            </svg><span>Разработка сайта web2.ru</span></a></div>
-      </div>
-    </footer>
     <script src="./js/vendor.js"></script>
     <script src="./js/main.js"></script>
   </body>

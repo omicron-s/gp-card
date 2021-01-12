@@ -155,6 +155,41 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../views/layouts/header/header.js":
+/*!*****************************************!*\
+  !*** ../views/layouts/header/header.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  // let header = $('.navbar');
+
+  /* Появление шапки при скролле вниз после половины экрана */
+  // $(window).on('scroll resize load', function () {
+  //   if ($(window).scrollTop() > window.innerHeight / 2) {
+  //     header.addClass('fixed');
+  //     $('body').css('padding-top', header.height());
+  //   }
+  //   if ($(window).scrollTop() <= 0) {
+  //     header.removeClass('fixed');
+  //     $('body').css('padding-top', 0);
+  //   }
+  // });
+
+  /* Появление меню по кнопке */
+  $('.button-burger').on('click', function () {
+    var expanded = $(this).attr('aria-expanded') === 'true';
+    $(this).attr('aria-expanded', !expanded);
+    $(this).toggleClass('open');
+    $('.header, .nav').toggleClass('open');
+  });
+});
+
+/***/ }),
+
 /***/ "./main.js":
 /*!*****************!*\
   !*** ./main.js ***!
@@ -166,8 +201,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! focus-visible/dist/focus-visible.min */ "../../node_modules/focus-visible/dist/focus-visible.min.js");
 /* harmony import */ var focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _layouts_header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @layouts/header/header */ "../views/layouts/header/header.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2__);
 // import $ from 'jquery/dist/jquery.min';
 // global.$ = $;
 // import 'core-js/stable/array/for-each';
@@ -176,8 +212,8 @@ __webpack_require__.r(__webpack_exports__);
 // import 'core-js/stable';
 
 /* полифил для :focus-visible */
- // import header from '@layouts/header/header';
-// import banner from '@blocks/banner/banner';
+
+ // import banner from '@blocks/banner/banner';
 // import types from '@blocks/types/types';
 // import eventsBlock from '@blocks/events-block/events-block';
 // import advantages from '@blocks/advantages/advantages';
@@ -197,8 +233,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 $(function () {
-  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_1___default()();
+  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2___default()();
   $('svg').attr('focusable', 'false');
+  Object(_layouts_header_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
 /***/ })
