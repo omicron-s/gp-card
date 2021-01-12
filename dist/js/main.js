@@ -155,6 +155,56 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../views/blocks/payment/payment.js":
+/*!******************************************!*\
+  !*** ../views/blocks/payment/payment.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "../../node_modules/swiper/swiper.esm.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"]]);
+  var payments = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.payment .swiper-container', {
+    slidesPerView: 1,
+    speed: 500,
+    centeredSlides: true,
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.payment .swiper-button-next',
+      prevEl: '.payment .swiper-button-prev'
+    },
+    breakpoints: {
+      // when window width is >= 540px
+      540: {
+        slidesPerView: 1,
+        centeredSlides: true
+      },
+      // when window width is >= 768px
+      768: {
+        slidesPerView: 2,
+        centeredSlides: true
+      },
+      // when window width is >= 1024px
+      1024: {
+        slidesPerView: 3,
+        centeredSlides: false
+      },
+      // when window width is >= 1200px
+      1200: {
+        slidesPerView: 3,
+        centeredSlides: false
+      }
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "../views/layouts/header/header.js":
 /*!*****************************************!*\
   !*** ../views/layouts/header/header.js ***!
@@ -202,8 +252,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! focus-visible/dist/focus-visible.min */ "../../node_modules/focus-visible/dist/focus-visible.min.js");
 /* harmony import */ var focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(focus_visible_dist_focus_visible_min__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _layouts_header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @layouts/header/header */ "../views/layouts/header/header.js");
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _blocks_payment_payment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @blocks/payment/payment */ "../views/blocks/payment/payment.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_3__);
 // import $ from 'jquery/dist/jquery.min';
 // global.$ = $;
 // import 'core-js/stable/array/for-each';
@@ -213,8 +264,8 @@ __webpack_require__.r(__webpack_exports__);
 
 /* полифил для :focus-visible */
 
- // import banner from '@blocks/banner/banner';
-// import types from '@blocks/types/types';
+
+ // import types from '@blocks/types/types';
 // import eventsBlock from '@blocks/events-block/events-block';
 // import advantages from '@blocks/advantages/advantages';
 // import zones from '@blocks/zones/zones';
@@ -233,9 +284,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 $(function () {
-  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_2___default()();
+  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_3___default()();
   $('svg').attr('focusable', 'false');
   Object(_layouts_header_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  Object(_blocks_payment_payment__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
 
 /***/ })
