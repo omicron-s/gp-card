@@ -167,13 +167,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "../../node_modules/swiper/swiper.esm.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"]]);
+  swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Navigation"], swiper__WEBPACK_IMPORTED_MODULE_0__["Autoplay"]]);
   var payments = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.payment .swiper-container', {
     slidesPerView: 1,
     speed: 500,
     centeredSlides: true,
     loop: true,
     spaceBetween: 30,
+    autoplay: {
+      delay: 4000
+    },
     navigation: {
       nextEl: '.payment .swiper-button-next',
       prevEl: '.payment .swiper-button-prev'
