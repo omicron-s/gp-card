@@ -243,21 +243,20 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  // let header = $('.navbar');
-
+  var header = $('.header');
   /* Появление шапки при скролле вниз после половины экрана */
-  // $(window).on('scroll resize load', function () {
-  //   if ($(window).scrollTop() > window.innerHeight / 2) {
-  //     header.addClass('fixed');
-  //     $('body').css('padding-top', header.height());
-  //   }
-  //   if ($(window).scrollTop() <= 0) {
-  //     header.removeClass('fixed');
-  //     $('body').css('padding-top', 0);
-  //   }
-  // });
 
+  $(window).on('scroll resize load', function () {
+    if ($(window).scrollTop() > window.innerHeight / 2) {
+      header.addClass('fixed');
+    }
+
+    if ($(window).scrollTop() <= 0) {
+      header.removeClass('fixed');
+    }
+  });
   /* Появление меню по кнопке */
+
   $('.button-burger').on('click', function () {
     var expanded = $(this).attr('aria-expanded') === 'true';
     $(this).attr('aria-expanded', !expanded);
