@@ -155,6 +155,117 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "../views/blocks/calc/calc.js":
+/*!************************************!*\
+  !*** ../views/blocks/calc/calc.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "../../node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "../../node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ "../../node_modules/core-js/modules/es.regexp.to-string.js");
+/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! core-js/modules/es.string.match.js */ "../../node_modules/core-js/modules/es.string.match.js");
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "../../node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  var sum = $('#total_cost').text();
+  var preSum = sum;
+  $('.calc__card-block input').on('change keyup input', function () {
+    if (this.value.match(/[^0-9]/g)) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    }
+
+    $(this).val();
+    summa();
+    summaAnim();
+  });
+  $('.calc__card-block button').on('click', function () {
+    var input = $(this).siblings('input').val();
+    var sign = $(this).attr('data-sign');
+
+    if (sign === 'plus') {
+      input++;
+      $(this).siblings('input').val(input);
+      $(this).siblings('[data-sign=minus]').removeAttr('disabled');
+    }
+
+    if (sign === 'minus' && input > 0) {
+      input--;
+      $(this).siblings('input').val(input);
+
+      if (input == 0) {
+        $(this).attr('disabled', 'disabled');
+      }
+    }
+
+    summa();
+    summaAnim();
+  });
+
+  function summa() {
+    var car = $('#input_car').val();
+    var bus = $('#input_bus').val();
+    var fura = $('#input_fura').val();
+    preSum = $('#total_cost').text();
+    preSum = parseInt(preSum.replace(/\s+/g, ''), 10);
+    sum = car * 20000 + bus * 40000 + fura * 180000;
+  }
+
+  function summaAnim() {
+    $('#total_cost').prop('Counter', preSum).animate({
+      Counter: sum
+    }, {
+      duration: 100,
+      easing: 'swing',
+      step: function step(now) {
+        $('#total_cost').text(Math.ceil(now).toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ' '));
+      }
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "../views/blocks/form/form.js":
+/*!************************************!*\
+  !*** ../views/blocks/form/form.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "../../node_modules/core-js/modules/es.regexp.exec.js");
+/* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.match.js */ "../../node_modules/core-js/modules/es.string.match.js");
+/* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "../../node_modules/core-js/modules/es.string.replace.js");
+/* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  $('#INN, #BIK, #YourOGRN, #YourINN, #YourKPP, #YourBIK, #YourBill, #YourAcc').on('change keyup input', function () {
+    if (this.value.match(/[^0-9]/g)) {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "../views/blocks/info/info.js":
 /*!************************************!*\
   !*** ../views/blocks/info/info.js ***!
@@ -243,25 +354,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var header = $('.header');
-  /* Появление шапки при скролле вниз после половины экрана */
-
-  $(window).on('scroll resize load', function () {
-    if ($(window).scrollTop() > window.innerHeight / 2) {
-      header.addClass('fixed');
-    }
-
-    if ($(window).scrollTop() <= 0) {
-      header.removeClass('fixed');
-    }
-  });
   /* Появление меню по кнопке */
-
   $('.button-burger').on('click', function () {
     var expanded = $(this).attr('aria-expanded') === 'true';
     $(this).attr('aria-expanded', !expanded);
     $(this).toggleClass('open');
     $('.header, .nav').toggleClass('open');
+    $('html').toggleClass('header__active');
   });
 });
 
@@ -281,8 +380,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_header_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @layouts/header/header */ "../views/layouts/header/header.js");
 /* harmony import */ var _blocks_payment_payment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @blocks/payment/payment */ "../views/blocks/payment/payment.js");
 /* harmony import */ var _blocks_info_info__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @blocks/info/info */ "../views/blocks/info/info.js");
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
-/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _blocks_calc_calc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @blocks/calc/calc */ "../views/blocks/calc/calc.js");
+/* harmony import */ var _blocks_form_form__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @blocks/form/form */ "../views/blocks/form/form.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! svg4everybody/dist/svg4everybody.min */ "../../node_modules/svg4everybody/dist/svg4everybody.min.js");
+/* harmony import */ var svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_6__);
 // import $ from 'jquery/dist/jquery.min';
 // global.$ = $;
 // import 'core-js/stable/array/for-each';
@@ -291,6 +392,8 @@ __webpack_require__.r(__webpack_exports__);
 // import 'core-js/stable';
 
 /* полифил для :focus-visible */
+
+
 
 
 
@@ -313,11 +416,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 $(function () {
-  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_4___default()();
+  svg4everybody_dist_svg4everybody_min__WEBPACK_IMPORTED_MODULE_6___default()();
   $('svg').attr('focusable', 'false');
   Object(_layouts_header_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
   Object(_blocks_payment_payment__WEBPACK_IMPORTED_MODULE_2__["default"])();
   Object(_blocks_info_info__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_blocks_calc_calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_blocks_form_form__WEBPACK_IMPORTED_MODULE_5__["default"])();
 });
 
 /***/ })
