@@ -91,6 +91,64 @@
                 <li class="advantages-item" style="background-image: url('img/advantages/toplivo.jpg')"><b>Только качественное<br>топливо</b><span>Без риска заправки на сомнительных АЗС</span></li>
         </ul>
       </div>
+      <section class="calc">
+        <h2 class="title-h2">Расчет экономии</h2>
+        <div class="swiper-container" id="eco_slider">
+          <div class="swiper-wrapper">
+                  <div class="swiper-slide calc__card">
+                    <div class="calc__card-img"><img src="img/calc/car.png" alt="Легковой автомобиль"></div><span>Легковые</span>
+                    <div class="calc__card-block">
+                      <button disabled="disabled" data-sign="minus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#minus"></use>
+                        </svg>
+                      </button>
+                      <input id="input_car" type="text" value="0">
+                      <button data-sign="plus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide calc__card">
+                    <div class="calc__card-img"><img src="img/calc/bus.png" alt="Фургон"></div><span>Фургоны</span>
+                    <div class="calc__card-block">
+                      <button disabled="disabled" data-sign="minus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#minus"></use>
+                        </svg>
+                      </button>
+                      <input id="input_bus" type="text" value="0">
+                      <button data-sign="plus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="swiper-slide calc__card">
+                    <div class="calc__card-img"><img src="img/calc/fura.png" alt="Грузовик"></div><span>Грузовые</span>
+                    <div class="calc__card-block">
+                      <button disabled="disabled" data-sign="minus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#minus"></use>
+                        </svg>
+                      </button>
+                      <input id="input_fura" type="text" value="0">
+                      <button data-sign="plus">
+                        <svg>
+                          <use href="img/sprites/sprite.svg#plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+          </div>
+        </div>
+        <div class="calc__bottom">
+          <div class="container"><b id="total_cost">0</b><span>рублей в год</span><small>При расчете использованы среднестатистические данные пробегов коммерческих автомобилей</small></div>
+        </div>
+      </section>
       <section class="control">
         <div class="control__left"><img src="img/control/drop.svg" alt="">
           <h2>Контроль качества топлива</h2><span>От процесса производства до реализации конечному потребителю.</span>
