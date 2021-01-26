@@ -174,6 +174,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_match_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "../../node_modules/core-js/modules/es.string.replace.js");
 /* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper */ "../../node_modules/swiper/swiper.esm.js");
+
 
 
 
@@ -233,6 +235,47 @@ __webpack_require__.r(__webpack_exports__);
         $('#total_cost').text(Math.ceil(now).toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ' '));
       }
     });
+  }
+
+  swiper__WEBPACK_IMPORTED_MODULE_5__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_5__["Navigation"]]);
+  var windowWidth = window.innerWidth;
+  var inits = false;
+  var swiper;
+  $(window).on('resize', function () {
+    windowWidth = window.innerWidth;
+    calcSwiper();
+  });
+  calcSwiper();
+
+  function calcSwiper() {
+    if (windowWidth < 540) {
+      if (!inits) {
+        inits = true;
+        swiper = new swiper__WEBPACK_IMPORTED_MODULE_5__["default"]('#eco_slider', {
+          slidesPerView: 1,
+          speed: 400,
+          centeredSlides: true,
+          spaceBetween: 0,
+          navigation: {
+            nextEl: '#eco_slider .swiper-button-next',
+            prevEl: '#eco_slider .swiper-button-prev'
+          },
+          on: {
+            slideChangeTransitionStart: function slideChangeTransitionStart() {
+              var prev = $('#eco_slider .swiper-slide-prev >span').text();
+              var next = $('#eco_slider .swiper-slide-next >span').text();
+              $('#eco_slider .swiper-button-prev span').text(prev);
+              $('#eco_slider .swiper-button-next span').text(next);
+            }
+          }
+        });
+      }
+    } else {
+      if (inits) {
+        inits = false;
+        swiper.destroy();
+      }
+    }
   }
 });
 

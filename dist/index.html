@@ -92,57 +92,69 @@
         </ul>
       </div>
       <section class="calc">
-        <h2 class="title-h2">Расчет экономии</h2>
-        <div class="swiper-container" id="eco_slider">
-          <div class="swiper-wrapper">
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/car.png" alt="Легковой автомобиль"></div><span>Легковые</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_car" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+        <div class="container">
+          <h2 class="title-h2">Расчет экономии</h2>
+          <div class="swiper-container" id="eco_slider">
+            <button class="swiper-button-prev">
+              <svg>
+                <use href="./img/sprites/sprite.svg#angle"></use>
+              </svg><span>Легковой</span>
+            </button>
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/car.png" alt="Легковой автомобиль"></div><span>Легковые</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_car" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/bus.png" alt="Фургон"></div><span>Фургоны</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_bus" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/bus.png" alt="Фургон"></div><span>Фургоны</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_bus" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/fura.png" alt="Грузовик"></div><span>Грузовые</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_fura" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/fura.png" alt="Грузовик"></div><span>Грузовые</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_fura" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
+            </div>
+            <button class="swiper-button-next"><span>Фургоны</span>
+              <svg>
+                <use href="./img/sprites/sprite.svg#angle"></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div class="calc__bottom">
@@ -150,42 +162,44 @@
         </div>
       </section>
       <section class="control">
-        <div class="control__left"><img src="img/control/drop.svg" alt="">
-          <h2>Контроль качества топлива</h2><span>От процесса производства до реализации конечному потребителю.</span>
-        </div>
-        <div class="control__right">
-          <div class="control__right-bg"><img src="img/control/bg.png" alt="">
-            <ul class="control__markers">
-              <li class="control__marker" id="marker1"><span></span>
-                <div class="control__marker-popup"><span>Каждая партия топлива на нефтебазе проходит лабораторные исследования <b>и получает паспорт качества</b></span></div>
-              </li>
-              <li class="control__marker" id="marker2"><span></span>
-                <div class="control__marker-popup"><span>Каждый бензовоз <br><b>Оборудован системой позиционирования GPS/ГЛОНАС,</b> <br> контролирующей маршрут и остановки в режме онлайн</span></div>
-              </li>
-              <li class="control__marker" id="marker3"><span></span>
-                <div class="control__marker-popup"><span>Происходит переход от <br><b>одноразовых пломб к электронным</b></span></div>
-              </li>
-              <li class="control__marker" id="marker4"><span></span>
-                <div class="control__marker-popup"><span>Процесс слива автоцестерны происходит при <br><b>двойном контроле</b> «Водитель - сотрудник АЗС»</span></div>
-              </li>
-              <li class="control__marker" id="marker5"><span></span>
-                <div class="control__marker-popup"><span>Каждый вид топлива сливается по отдельному <br><b>маркированному трубопроводу</b>      </span></div>
-              </li>
-              <li class="control__marker" id="marker6"><span></span>
-                <div class="control__marker-popup"><span>на каждой АЗС сети ежемесячно происходит не менее <b>одной внезапной проверки</b></span></div>
-              </li>
-              <li class="control__marker" id="marker7"><span></span>
-                <div class="control__marker-popup"><span><b>проверяет топливо в автоцистернах,</b> <br> выезжающих с нефтебаз, а также <b>топливо на АЗС</b></span></div>
-              </li>
+        <div class="control_wrapper">
+          <div class="control__left"><img src="img/control/drop.svg" alt="">
+            <h2>Контроль качества топлива</h2><span>От процесса производства до реализации конечному потребителю.</span>
+          </div>
+          <div class="control__right">
+            <div class="control__right-bg"><img src="img/control/bg.png" alt="">
+              <ul class="control__markers">
+                <li class="control__marker" id="marker1"><span></span>
+                  <div class="control__marker-popup"><span>Каждая партия топлива на нефтебазе проходит лабораторные исследования <b>и получает паспорт качества</b></span></div>
+                </li>
+                <li class="control__marker" id="marker2"><span></span>
+                  <div class="control__marker-popup"><span>Каждый бензовоз <br><b>Оборудован системой позиционирования GPS/ГЛОНАС,</b> <br> контролирующей маршрут и остановки в режме онлайн</span></div>
+                </li>
+                <li class="control__marker" id="marker3"><span></span>
+                  <div class="control__marker-popup"><span>Происходит переход от <br><b>одноразовых пломб к электронным</b></span></div>
+                </li>
+                <li class="control__marker" id="marker4"><span></span>
+                  <div class="control__marker-popup"><span>Процесс слива автоцестерны происходит при <br><b>двойном контроле</b> «Водитель - сотрудник АЗС»</span></div>
+                </li>
+                <li class="control__marker" id="marker5"><span></span>
+                  <div class="control__marker-popup"><span>Каждый вид топлива сливается по отдельному <br><b>маркированному трубопроводу</b>      </span></div>
+                </li>
+                <li class="control__marker" id="marker6"><span></span>
+                  <div class="control__marker-popup"><span>на каждой АЗС сети ежемесячно происходит не менее <b>одной внезапной проверки</b></span></div>
+                </li>
+                <li class="control__marker" id="marker7"><span></span>
+                  <div class="control__marker-popup"><span><b>проверяет топливо в автоцистернах,</b> <br> выезжающих с нефтебаз, а также <b>топливо на АЗС</b></span></div>
+                </li>
+              </ul>
+            </div>
+            <ul class="control__col-list">
+                    <li class="control__col-item">НПЗ</li>
+                    <li class="control__col-item">Ж/Д</li>
+                    <li class="control__col-item">Нефтебаза</li>
+                    <li class="control__col-item">Бензовоз</li>
+                    <li class="control__col-item">АЗС</li>
             </ul>
           </div>
-          <ul class="control__col-list">
-                  <li class="control__col-item">НПЗ</li>
-                  <li class="control__col-item">Ж/Д</li>
-                  <li class="control__col-item">Нефтебаза</li>
-                  <li class="control__col-item">Бензовоз</li>
-                  <li class="control__col-item">АЗС</li>
-          </ul>
         </div>
       </section>
       <section class="payment">

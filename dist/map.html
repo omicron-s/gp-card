@@ -77,57 +77,69 @@
         </ul>
       </div>
       <section class="calc">
-        <h2 class="title-h2">Расчет экономии</h2>
-        <div class="swiper-container" id="eco_slider">
-          <div class="swiper-wrapper">
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/car.png" alt="Легковой автомобиль"></div><span>Легковые</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_car" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+        <div class="container">
+          <h2 class="title-h2">Расчет экономии</h2>
+          <div class="swiper-container" id="eco_slider">
+            <button class="swiper-button-prev">
+              <svg>
+                <use href="./img/sprites/sprite.svg#angle"></use>
+              </svg><span>Легковой</span>
+            </button>
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/car.png" alt="Легковой автомобиль"></div><span>Легковые</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_car" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/bus.png" alt="Фургон"></div><span>Фургоны</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_bus" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/bus.png" alt="Фургон"></div><span>Фургоны</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_bus" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide calc__card">
-                    <div class="calc__card-img"><img src="img/calc/fura.png" alt="Грузовик"></div><span>Грузовые</span>
-                    <div class="calc__card-block">
-                      <button disabled="disabled" data-sign="minus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#minus"></use>
-                        </svg>
-                      </button>
-                      <input id="input_fura" type="text" value="0">
-                      <button data-sign="plus">
-                        <svg>
-                          <use href="img/sprites/sprite.svg#plus"></use>
-                        </svg>
-                      </button>
+                    <div class="swiper-slide calc__card">
+                      <div class="calc__card-img"><img src="img/calc/fura.png" alt="Грузовик"></div><span>Грузовые</span>
+                      <div class="calc__card-block">
+                        <button disabled="disabled" data-sign="minus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#minus"></use>
+                          </svg>
+                        </button>
+                        <input id="input_fura" type="text" value="0">
+                        <button data-sign="plus">
+                          <svg>
+                            <use href="img/sprites/sprite.svg#plus"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
-                  </div>
+            </div>
+            <button class="swiper-button-next"><span>Фургоны</span>
+              <svg>
+                <use href="./img/sprites/sprite.svg#angle"></use>
+              </svg>
+            </button>
           </div>
         </div>
         <div class="calc__bottom">

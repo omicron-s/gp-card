@@ -701,9 +701,6 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   position: relative;
   height: 100vh;
 }
@@ -1307,22 +1304,55 @@ small {
   margin-bottom: 40px;
 }
 
-.calc .swiper-wrapper {
+.calc .swiper-container {
+  position: relative;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.calc .swiper-container > button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  position: absolute;
+  top: unset;
+  bottom: 43px;
+  width: 130px;
+  height: 30px;
+  margin: 0 -5px;
+  -webkit-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #a2b3bf;
+}
+
+.calc .swiper-container > button svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin: 0 5px;
+}
+
+.calc .swiper-container .swiper-button-prev {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  left: 5px;
+}
+
+.calc .swiper-container .swiper-button-next {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  right: 5px;
 }
 
 .calc__card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 33%;
-  flex: 0 1 33%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1330,7 +1360,6 @@ small {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0 15px;
 }
 
 .calc__card span {
@@ -1674,10 +1703,37 @@ small {
 }
 
 .control {
+  position: relative;
   color: #fff;
+}
+
+.control::before,
+.control:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+}
+
+.control::before {
+  right: 50%;
+  left: 0;
+  background: linear-gradient(254.49deg, #151636 5.85%, #101f4f 46.35%, #0d1f4f 64.9%);
+}
+
+.control::after {
+  right: 0;
+  left: 50%;
+  background-color: #edf3f7;
+}
+
+.control_wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 .control__left {
@@ -1685,7 +1741,6 @@ small {
   -ms-flex: 0 1 35%;
   flex: 0 1 35%;
   padding: 80px 60px 0;
-  background: linear-gradient(254.49deg, #151636 5.85%, #101f4f 46.35%, #0d1f4f 64.9%);
 }
 
 .control__left img {
@@ -1712,7 +1767,7 @@ small {
   height: 636px;
   overflow: hidden;
   padding: 60px 60px 0 90px;
-  background: #edf3f7;
+  background-color: #edf3f7;
 }
 
 .control__col-list {
@@ -3340,6 +3395,7 @@ small {
   position: relative;
   background-color: #0f1b45;
   padding: 65px 0 20px;
+  margin-top: auto;
 }
 
 .footer__row {
@@ -3725,7 +3781,29 @@ html.fixed .modal-overlay {
   visibility: visible;
 }
 
+@media (min-width: 540px) {
+  .calc .swiper-container > button {
+    display: none;
+  }
+
+  .calc__card {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 33%;
+    flex: 0 1 33%;
+    margin: 0 15px;
+  }
+}
+
 @media (min-width: 768px) {
+  .calc .swiper-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
   .deal__hr-show {
     display: none;
   }
@@ -3764,8 +3842,29 @@ html.fixed .modal-overlay {
     background-size: auto 100%;
     background-image: url("../img/heading/main.jpg");
     background-repeat: no-repeat;
-    background-position: right 0;
+    background-position-x: 200px;
     min-height: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heading.heading-main {
+    background-size: auto 100%;
+    background-position-x: 400px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .heading.heading-main {
+    background-size: auto 100%;
+    background-position-x: 100%;
+  }
+}
+
+@media (min-width: 1920px) {
+  .heading.heading-main {
+    background-size: cover;
+    background-position: 0;
   }
 }
 
@@ -3863,6 +3962,11 @@ html.fixed .modal-overlay {
   }
 
   .control {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .control_wrapper {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
@@ -3994,6 +4098,18 @@ html.fixed .modal-overlay {
   .articles {
     margin-top: 25px;
     padding-bottom: 25px;
+  }
+
+  .calc {
+    padding-top: 25px;
+  }
+
+  .calc .title-h2 {
+    margin-bottom: 15px;
+  }
+
+  .calc__bottom b {
+    font-size: 54px;
   }
 
   .contacts {
