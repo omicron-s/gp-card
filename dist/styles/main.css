@@ -2733,6 +2733,7 @@ small {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 670px;
 }
 
 .map__zone {
@@ -2746,11 +2747,12 @@ small {
 .map__filters {
   width: 100%;
   max-width: 525px;
+  height: 100%;
   overflow: hidden;
   padding: 40px 50px 35px 90px;
   background-color: #edf6f7;
-  margin-left: auto;
   color: #031634;
+  overflow-y: scroll;
 }
 
 .map__filters > small {
@@ -2761,6 +2763,12 @@ small {
 
 .map__filters > button {
   text-transform: none;
+}
+
+@supports (-moz-appearance: none) {
+  .map__filters > button {
+    margin-bottom: 35px;
+  }
 }
 
 .map__title {
